@@ -8,9 +8,6 @@ app.config([ "$routeProvider", function($routeProvider) {
   
 }]);
 
-app.controller("CustomerSearchController",
-[ "$scope", CustomerSearchController ] );
-
 app.controller("CustomerSearchController", [ '$scope', '$http',
 function($scope, $http) {
   var page = 0;
