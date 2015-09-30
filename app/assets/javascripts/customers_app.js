@@ -1,13 +1,15 @@
-var app = angular.module('customers', []);
+var app = angular.module( 'customers', ['ngRoute', 'templates']);
 
-//var CustomerSearchController = function($scope) { $scope.search = function(searchTerm) {
-//    $scope.searchedFor = searchTerm;
-//  }
-//}
+app.config([ "$routeProvider", function($routeProvider) {
+            $route.Provider.when("/", {
+              controller: "CustomerSearchController",
+              templateUrl: "customer_search.html"
+            });        
+  
+}]);
 
-
-//app.controller("CustomerSearchController",
-//[ "$scope", CustomerSearchController ] );
+app.controller("CustomerSearchController",
+[ "$scope", CustomerSearchController ] );
 
 app.controller("CustomerSearchController", [ '$scope', '$http',
 function($scope, $http) {
